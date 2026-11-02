@@ -16,6 +16,7 @@ The application automatically refreshes dashboard data to provide updated task a
 ## Features
 
 ### 1. Employer Dashboard
+
 - View total tasks.
 - Monitor Pending, In Progress, and Completed tasks.
 - View scheduled interviews.
@@ -23,6 +24,7 @@ The application automatically refreshes dashboard data to provide updated task a
 - Automatically refresh dashboard information.
 
 ### 2. Task Management
+
 - Create and assign tasks to Virtual HR.
 - Add task descriptions and due dates.
 - Set task priorities: Low, Medium, and High.
@@ -31,12 +33,14 @@ The application automatically refreshes dashboard data to provide updated task a
 - Delete tasks.
 
 ### 3. Virtual HR Dashboard
+
 - View tasks assigned to Virtual HR.
 - Monitor task descriptions and priorities.
 - Update task progress.
 - Change task status to Pending, In Progress, or Completed.
 
 ### 4. Interview Scheduling
+
 - Schedule candidate interviews.
 - Store candidate name and email.
 - Select interview date and time.
@@ -53,16 +57,16 @@ The application automatically refreshes dashboard data to provide updated task a
 
 ## Technology Stack
 
-| Layer | Technologies |
-|---|---|
-| Frontend | React, JavaScript, Bootstrap 5 |
-| Frontend Tools | Vite, Axios, React Router |
-| Icons | Lucide React |
-| Backend | Python, FastAPI |
-| Database | SQLite |
-| ORM | SQLAlchemy |
-| Validation | Pydantic |
-| API Testing | Postman, FastAPI Swagger UI |
+| Layer          | Technologies                   |
+| -------------- | ------------------------------ |
+| Frontend       | React, JavaScript, Bootstrap 5 |
+| Frontend Tools | Vite, Axios, React Router      |
+| Icons          | Lucide React                   |
+| Backend        | Python, FastAPI                |
+| Database       | SQLite                         |
+| ORM            | SQLAlchemy                     |
+| Validation     | Pydantic                       |
+| API Testing    | Postman, FastAPI Swagger UI    |
 
 ## Project Structure
 
@@ -208,26 +212,26 @@ http://localhost:5173
 
 ### Task Management APIs
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/tasks/` | Create a task |
-| GET | `/tasks/` | Get all tasks |
-| GET | `/tasks/{task_id}` | Get task by ID |
-| PUT | `/tasks/{task_id}` | Update task details |
-| PATCH | `/tasks/{task_id}/status` | Update task status |
-| DELETE | `/tasks/{task_id}` | Delete a task |
+| Method | Endpoint                  | Description         |
+| ------ | ------------------------- | ------------------- |
+| POST   | `/tasks/`                 | Create a task       |
+| GET    | `/tasks/`                 | Get all tasks       |
+| GET    | `/tasks/{task_id}`        | Get task by ID      |
+| PUT    | `/tasks/{task_id}`        | Update task details |
+| PATCH  | `/tasks/{task_id}/status` | Update task status  |
+| DELETE | `/tasks/{task_id}`        | Delete a task       |
 
 ### Interview Scheduling APIs
 
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/interviews/` | Schedule an interview |
-| GET | `/interviews/` | Get all interviews |
-| GET | `/interviews/{interview_id}` | Get interview by ID |
-| PUT | `/interviews/{interview_id}` | Update interview details |
-| PATCH | `/interviews/{interview_id}/cancel` | Cancel an interview |
-| PATCH | `/interviews/{interview_id}/complete` | Mark interview as completed |
-| DELETE | `/interviews/{interview_id}` | Delete an interview |
+| Method | Endpoint                              | Description                 |
+| ------ | ------------------------------------- | --------------------------- |
+| POST   | `/interviews/`                        | Schedule an interview       |
+| GET    | `/interviews/`                        | Get all interviews          |
+| GET    | `/interviews/{interview_id}`          | Get interview by ID         |
+| PUT    | `/interviews/{interview_id}`          | Update interview details    |
+| PATCH  | `/interviews/{interview_id}/cancel`   | Cancel an interview         |
+| PATCH  | `/interviews/{interview_id}/complete` | Mark interview as completed |
+| DELETE | `/interviews/{interview_id}`          | Delete an interview         |
 
 ## Task Status Workflow
 
@@ -275,6 +279,7 @@ Salarite uses SQLite for storing application data.
 The main database entities are:
 
 **Task**
+
 - id
 - title
 - description
@@ -286,6 +291,7 @@ The main database entities are:
 - updated_at
 
 **Interview**
+
 - id
 - candidate_name
 - candidate_email
@@ -354,8 +360,8 @@ Deployment configuration and a live demo link will be added after deployment.
 
 **Developer:** Naman Vijay
 
-**GitHub:** .
+**GitHub:** https://github.com/Namanvijay11/Virtual-HR-ATS-Platform .
 
 ---
 
-*Developed as part of the Salarite Virtual HR internship assignment.*
+_Developed as part of the Salarite Virtual HR internship assignment._
