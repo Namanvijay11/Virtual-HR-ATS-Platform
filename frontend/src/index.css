@@ -252,3 +252,21 @@
         padding: 7px 10px;
     }
 }
+
+@media (max-width: 768px) {
+  .sidebar:not(.sidebar-open) {
+    transform: translateX(-100%) !important;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar-close-btn {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
