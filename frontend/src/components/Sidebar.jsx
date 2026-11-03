@@ -1,6 +1,5 @@
 
 import { NavLink } from "react-router-dom";
-
 import {
     LayoutDashboard,
     ClipboardList,
@@ -22,7 +21,7 @@ function Sidebar({ isOpen, onClose }) {
                 <button
                     className="sidebar-close-btn"
                     onClick={onClose}
-                    aria-label="Close navigation menu"
+                    aria-label="Close navigation"
                 >
                     <X size={23} />
                 </button>
@@ -30,45 +29,31 @@ function Sidebar({ isOpen, onClose }) {
 
             <p className="sidebar-label">WORKSPACE</p>
 
-            <NavLink
-                to="/"
-                end
-                className={getNavClass}
-                onClick={onClose}
-            >
+            <NavLink to="/" end className={getNavClass} onClick={onClose}>
                 <LayoutDashboard size={19} />
-                Dashboard
+                <span className="nav-label">Dashboard</span>
             </NavLink>
 
-            <NavLink
-                to="/tasks"
-                className={getNavClass}
-                onClick={onClose}
-            >
+            <NavLink to="/tasks" className={getNavClass} onClick={onClose}>
                 <ClipboardList size={19} />
-                Task Management
+                <span className="nav-label">Task Management</span>
             </NavLink>
 
-            <NavLink
-                to="/interviews"
-                className={getNavClass}
-                onClick={onClose}
-            >
+            <NavLink to="/interviews" className={getNavClass} onClick={onClose}>
                 <CalendarDays size={19} />
-                Interviews
+                <span className="nav-label">Interviews</span>
             </NavLink>
 
-            <NavLink
-                to="/virtual-hr"
-                className={getNavClass}
-                onClick={onClose}
-            >
+            <NavLink to="/virtual-hr" className={getNavClass} onClick={onClose}>
                 <Users size={19} />
-                Virtual HR
+                <span className="nav-label">Virtual HR</span>
             </NavLink>
 
         </div>
     );
+    
 }
 
+
 export default Sidebar;
+

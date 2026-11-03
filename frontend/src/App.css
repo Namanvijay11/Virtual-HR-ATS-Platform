@@ -148,3 +148,228 @@ body {
         padding: 0 15px;
     }
 }
+
+/* Desktop: hide mobile navigation buttons */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .sidebar-close-btn {
+    display: none !important;
+  }
+
+  .sidebar {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* Mobile: show navigation buttons */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .sidebar-close-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+
+/* ===== SALARITE MOBILE LAYOUT FIX ===== */
+
+@media (max-width: 768px) {
+
+  .app-layout {
+    display: block !important;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px !important;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 24px 16px !important;
+    z-index: 1100;
+    overflow-y: auto;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  .main-section {
+    width: 100% !important;
+    min-width: 0;
+    margin-left: 0 !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    border: none;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .sidebar-close-btn {
+    display: flex !important;
+    border: none;
+    background: transparent;
+    color: white;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 1050;
+  }
+
+  .page-content {
+    width: 100%;
+    padding: 18px 14px !important;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    width: 100%;
+    height: 72px;
+    padding: 0 14px !important;
+  }
+
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .profile {
+    gap: 6px;
+  }
+
+  .stat-card,
+  .content-card {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .content-card {
+    overflow-wrap: normal;
+  }
+
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 650px !important;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 12px 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .page-content {
+    padding: 14px 12px !important;
+  }
+
+  .topbar h5 {
+    font-size: 15px;
+  }
+
+  .topbar small {
+    font-size: 10px;
+  }
+
+  .stat-card h2 {
+    font-size: 22px;
+  }
+
+  .content-card h5 {
+    font-size: 17px;
+  }
+}
+
+/* Desktop navigation */
+@media (min-width: 769px) {
+  .sidebar {
+    position: relative !important;
+    transform: none !important;
+    width: 250px !important;
+  }
+
+  .mobile-menu-btn,
+  .sidebar-close-btn {
+    display: none !important;
+  }
+
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+
+/* FIX: Show navigation text in mobile sidebar */
+
+@media (max-width: 768px) {
+
+    .sidebar.sidebar-open .nav-item {
+        font-size: 14px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        color: #cbd5e1 !important;
+        padding: 13px 12px !important;
+    }
+
+    .sidebar.sidebar-open .nav-item .nav-label {
+        display: inline-block !important;
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: inherit !important;
+    }
+
+    .sidebar.sidebar-open .sidebar-label {
+        display: block !important;
+    }
+}
+
