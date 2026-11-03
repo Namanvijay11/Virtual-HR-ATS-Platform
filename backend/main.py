@@ -23,7 +23,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://YOUR-FRONTEND-URL.onrender.com"
+        "https://salarite-frontend-u1yr.onrender.com/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
