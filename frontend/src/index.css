@@ -1,111 +1,254 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+/* ==============================
+   RESPONSIVE NAVIGATION
+================================ */
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+.mobile-menu-btn,
+.sidebar-close-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
 }
 
-body {
-  margin: 0;
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+/* ==============================
+   MOBILE RESPONSIVENESS
+================================ */
+
+@media (max-width: 768px) {
+
+    .app-layout {
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100vh;
+        min-height: 100vh;
+        z-index: 1100;
+        padding: 25px 16px;
+
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-header {
+        margin-bottom: 35px;
+    }
+
+    .brand {
+        font-size: 22px;
+        padding-left: 12px;
+        margin-bottom: 0;
+    }
+
+    .sidebar-label {
+        display: block;
+    }
+
+    .nav-item {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 14px;
+        padding: 13px 12px;
+    }
+
+    .nav-item svg {
+        flex-shrink: 0;
+    }
+
+    .sidebar-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    /* Overlay */
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1050;
+    }
+
+    /* Main content */
+
+    .main-section {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Navbar */
+
+    .topbar {
+        height: 70px;
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        color: #253047;
+    }
+
+    .topbar h5 {
+        font-size: 16px;
+    }
+
+    .topbar small {
+        font-size: 11px;
+    }
+
+    .profile {
+        gap: 7px;
+    }
+
+    .avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+    .profile-info {
+        font-size: 12px;
+    }
+
+    /* Page content */
+
+    .page-content {
+        width: 100%;
+        padding: 16px;
+        overflow-x: hidden;
+    }
+
+    /* Dashboard cards */
+
+    .stat-card,
+    .content-card {
+        padding: 16px;
+        margin-bottom: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 23px;
+    }
+
+    /* Tables */
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table {
+        min-width: 600px;
+    }
+
+    /* Forms */
+
+    .form-control,
+    .form-select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    /* Buttons */
+
+    button,
+    .btn {
+        white-space: nowrap;
+    }
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
+/* ==============================
+   SMALL MOBILE DEVICES
+================================ */
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
+@media (max-width: 480px) {
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+    .topbar {
+        padding: 0 10px;
+    }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+    .topbar h5 {
+        font-size: 14px;
+    }
+
+    .topbar small {
+        font-size: 10px;
+    }
+
+    .profile-info {
+        font-size: 11px;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .page-content {
+        padding: 12px;
+    }
+
+    .stat-card,
+    .content-card {
+        padding: 13px;
+        border-radius: 10px;
+    }
+
+    .stat-card h2 {
+        font-size: 21px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
 }

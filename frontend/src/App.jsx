@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar";
@@ -10,14 +11,34 @@ import VirtualHRDashboard from "./pages/VirtualHRDashboard";
 import InterviewScheduling from "./pages/InterviewScheduling";
 
 function App() {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const closeSidebar = () => {
+        setSidebarOpen(false);
+    };
+
     return (
         <BrowserRouter>
             <div className="app-layout">
 
-                <Sidebar />
+                <Sidebar
+                    isOpen={sidebarOpen}
+                    onClose={closeSidebar}
+                />
+
+                {sidebarOpen && (
+                    <div
+                        className="sidebar-overlay"
+                        onClick={closeSidebar}
+                    />
+                )}
 
                 <div className="main-section">
-                    <Navbar />
+                    <Navbar
+                        onMenuClick={() =>
+                            setSidebarOpen(!sidebarOpen)
+                        }
+                    />
 
                     <div className="page-content">
                         <Routes>
